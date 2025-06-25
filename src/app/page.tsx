@@ -1,29 +1,30 @@
 'use client';
 
 import Dialog from '@/components/Dialog';
-import { useState } from 'react';
+import { overlay } from 'overlay-kit';
 
 export default function Home() {
-  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div>
       <button
         className='border-2 rounded-sm'
         onClick={() => {
-          setIsOpen(true);
+          overlay.open(({isOpen, close}) => {
+            return <Dialog isOpen={isOpen} onClose={close}/>
+          })
         }}
       >
         Open
       </button>
-      {isOpen && (
+      {/* {isOpen && (
         <Dialog
           // open={isOpen}
           onClose={() => {
             setIsOpen(false);
           }}
         />
-      )}
+      )} */}
     </div>
   );
 }
