@@ -6,7 +6,7 @@ export default function Dialog({
   onClose: () => void;
 }) {
   return (
-    <>
+    <div>
       {isOpen && (
         <div className='fixed inset-0 flex justify-center items-center bg-black/30 z-50'>
           <div className='relative flex flex-col justify-center items-center w-[200px] h-[200px] bg-amber-100 rounded shadow-lg'>
@@ -20,6 +20,6 @@ export default function Dialog({
           </div>
         </div>
       )}
-    </>
+    </div>
   );
 }
